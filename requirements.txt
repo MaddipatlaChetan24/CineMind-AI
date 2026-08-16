@@ -1,0 +1,8 @@
+streamlit>=1.48
+streamlit-option-menu
+streamlit-extras
+pandas
+numpy
+scikit-learn
+nltk
+requests

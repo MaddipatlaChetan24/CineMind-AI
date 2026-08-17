@@ -17,14 +17,7 @@ from processing.preferences import (
 
 st.
 =
-
-
-def recommend_page(new_df: pd.DataFrame, meta: Dict[int, Tuple[float, str]]) -> None:
-    st.title("Movie Recommender System")
-    st.caption("Pick a movie and get similar suggestions based on tags, genres, keywords, cast, and production company.")
-
-    selected_movie = st.selectbox("Select a movie...", new_df["title"].values)
-
+=
     if st.button("Recommend", type="primary", use_container_width=True):
         st.session_state.selected_movie = selected_movie
         with st.spinner("Finding similar movies..."):

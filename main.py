@@ -21,13 +21,6 @@ st.
 
 
 @st.cache_resource
-def movie_meta(movies2: pd.DataFrame) -> Dict[int, Tuple[float, str]]:
-    """Map movie_id -> (rating, year) for display on movie cards."""
-    meta = {}
-    for row in movies2.itertuples(index=False):
-        year = str(row.release_date)[:4] if row.release_date else ''
-        meta[row.movie_id] = (row.vote_average, year)
-    return meta
 
 
 def compute_recommendations(

@@ -21,18 +21,6 @@ st.
 
 
 
-def format_caption(title: str, rating: float, year: str) -> str:
-    caption = f"**{title}**"
-    if year or rating:
-        caption += "  \n"
-        if year:
-            caption += f"{year}"
-        if year and rating:
-            caption += " · "
-        if rating:
-            caption += f"Rating: {rating:.1f}"
-    return caption
-
 
 def show_movie_grid(
     movies: List[Tuple[str, int]], meta: Dict[int, Tuple[float, str]]

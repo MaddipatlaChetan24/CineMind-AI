@@ -22,15 +22,7 @@ st.
 =
 
 def show_scored_movie_grid(
-    movies: List[Tuple[str, int, float]], meta: Dict[int, Tuple[float, str]]
-) -> None:
-    """Display a grid of movies that include a similarity score."""
-    cols = st.columns(5)
-    for col, (title, movie_id, score) in zip(cols, movies[:5]):
-        rating, year = meta.get(movie_id, (0, ''))
-        with col:
-            st.image(preprocess.fetch_posters(movie_id), width="stretch")
-            caption = format_caption(title, rating, year)
+    movies: List[Tuple[=(title, rating, year)
             caption += f"  \nMatch: {score:.0%}"
             st.caption(caption)
 

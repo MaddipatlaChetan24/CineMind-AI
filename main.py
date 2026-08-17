@@ -18,11 +18,6 @@ from processing.preferences import (
 st.
 
 
-@st.cache_resource
-def load_data() -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    loader = Main()
-    loader.main_()
-    return loader.getter()
 
 
 @st.cache_resource

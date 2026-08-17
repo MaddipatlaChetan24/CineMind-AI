@@ -13,7 +13,101 @@ from processing.preferences import (
     UserPreferences,
     filter_by_preferences,
     preference_controls,
-)=
+)
+
+st.set_page_config(page_title="Movie Recommender System", layout="wide")
+ui.apply_theme()
+
+SIMILARITY_FILES: List[Tuple[str, str]] = [
+    ("tags", "Overall similarity"),
+    ("genres", "Genres"),
+    ("keywords", "Keywords"),
+    ("cast", "Cast"),
+    ("production_comp", "Production company"),
+]
+
+PAGE_SIZE = 10
+
+
+@st.cache_resource
+def load_data() -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    loader = Main()
+    loader.main_()
+    return loader.getter()
+
+
+@st.cache_resource
+def movie_meta(movies2: pd.DataFrame) -> Dict[int, Tuple[float, str]]:
+    """Map movie_id -> (rating, year) for display on movie cards."""
+    meta = {}
+    for row in movies2.itertuples(index=False):
+        year = str(row.release_date)[:4] if row.release_date else ''
+        meta[row.movie_id] = (row.vote_average, year)
+    return meta
+
+
+def compute_recommendations(
+    new_df: pd.DataFrame, movie: str
+) -> Dict[str, List[Tuple[str, int]]]:
+    return {
+        label: preprocess.recommend(new_df, movie, f"Files/similarity_tags_{col}.pkl")
+        for col, label in SIMILARITY_FILES
+    }
+
+
+def format_caption(title: str, rating: float, year: str) -> str:
+    caption = f"**{title}**"
+    if year or rating:
+        caption += "  \n"
+        if year:
+            caption += f"{year}"
+        if year and rating:
+            caption += " · "
+        if rating:
+            caption += f"Rating: {rating:.1f}"
+    return caption
+
+
+def show_movie_grid(
+    movies: List[Tuple[str, int]], meta: Dict[int, Tuple[float, str]]
+) -> None:
+    cols = st.columns(5)
+    for col, (title, movie_id) in zip(cols, movies):
+        rating, year = meta.get(movie_id, (0, ''))
+        with col:
+            st.image(preprocess.fetch_posters(movie_id), width="stretch")
+            st.caption(format_caption(title, rating, year))
+
+
+def show_scored_movie_grid(
+    movies: List[Tuple[str, int, float]], meta: Dict[int, Tuple[float, str]]
+) -> None:
+    """Display a grid of movies that include a similarity score."""
+    cols = st.columns(5)
+    for col, (title, movie_id, score) in zip(cols, movies[:5]):
+        rating, year = meta.get(movie_id, (0, ''))
+        with col:
+            st.image(preprocess.fetch_posters(movie_id), width="stretch")
+            caption = format_caption(title, rating, year)
+            caption += f"  \nMatch: {score:.0%}"
+            st.caption(caption)
+
+
+def recommend_page(new_df: pd.DataFrame, meta: Dict[int, Tuple[float, str]]) -> None:
+    st.title("Movie Recommender System")
+    st.caption("Pick a movie and get similar suggestions based on tags, genres, keywords, cast, and production company.")
+
+    selected_movie = st.selectbox("Select a movie...", new_df["title"].values)
+
+    if st.button("Recommend", type="primary", use_container_width=True):
+        st.session_state.selected_movie = selected_movie
+        with st.spinner("Finding similar movies..."):
+            st.session_state.recs = compute_recommendations(new_df, selected_movie)
+            st.session_state.semantic_recs = semantic_recommend(new_df, selected_movie, top_n=25)
+
+    if recs := st.session_state.get("recs"):
+        st.subheader(f"Recommendations for **{st.session_state.selected_movie}**")
+
         # Content-based tabs + Semantic (TF-IDF) tab
         tab_labels = list(recs.keys()) + ["Semantic (TF-IDF)"]
         tabs = st.tabs(tab_labels)

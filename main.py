@@ -16,15 +16,7 @@ from processing.preferences import (
 )
 
 st.
-
-
-
 =
-
-def show_scored_movie_grid(
-    movies: List[Tuple[=(title, rating, year)
-            caption += f"  \nMatch: {score:.0%}"
-            st.caption(caption)
 
 
 def recommend_page(new_df: pd.DataFrame, meta: Dict[int, Tuple[float, str]]) -> None:

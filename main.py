@@ -15,18 +15,7 @@ from processing.preferences import (
     preference_controls,
 )
 
-st.set_page_config(page_title="Movie Recommender System", layout="wide")
-ui.apply_theme()
-
-SIMILARITY_FILES: List[Tuple[str, str]] = [
-    ("tags", "Overall similarity"),
-    ("genres", "Genres"),
-    ("keywords", "Keywords"),
-    ("cast", "Cast"),
-    ("production_comp", "Production company"),
-]
-
-PAGE_SIZE = 10
+st.
 
 
 @st.cache_resource

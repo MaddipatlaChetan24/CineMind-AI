@@ -13,20 +13,7 @@ from processing.preferences import (
     UserPreferences,
     filter_by_preferences,
     preference_controls,
-)
-
-st.
-=
-=
-    if st.button("Recommend", type="primary", use_container_width=True):
-        st.session_state.selected_movie = selected_movie
-        with st.spinner("Finding similar movies..."):
-            st.session_state.recs = compute_recommendations(new_df, selected_movie)
-            st.session_state.semantic_recs = semantic_recommend(new_df, selected_movie, top_n=25)
-
-    if recs := st.session_state.get("recs"):
-        st.subheader(f"Recommendations for **{st.session_state.selected_movie}**")
-
+)=
         # Content-based tabs + Semantic (TF-IDF) tab
         tab_labels = list(recs.keys()) + ["Semantic (TF-IDF)"]
         tabs = st.tabs(tab_labels)

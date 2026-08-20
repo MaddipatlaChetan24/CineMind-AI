@@ -4,6 +4,50 @@ import os
 import pickle
 from typing import List, Optional, Tuple
 
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+from processing import preprocess
+from processing.embeddings import compute_tfidf_similarity
+
+SIMILARITY_COLUMNS = ('tags', 'genres', 'keywords', 'cast', 'production_comp')
+
+PICKLE_FILES = {
+    'Files/new_df_dict.pkl': 'new_df',
+    'Files/movies_dict.pkl': 'movies',
+    'Files/movies2_dict.pkl': 'movies2',
+}
+
+
+class Main:
+
+    def __init__(self) -> None:
+        self.new_df: Optional[pd.DataFrame] = None
+        self.movies: Optional[pd.DataFrame] = None
+        self.movies2: Optional[pd.DataFrame] = None
+
+    def getter(self) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+        return self.new_df, self.movies, self.movies2
+
+    def get_df(self) -> None:
+        if os.path.exists('Files/new_df_dict.pkl'):
+            for path, attr in PICKLE_FILES.items():
+                with open(path, 'rb') as pickle_file:
+                    setattr(self, attr, pd.DataFrame.from_dict(pickle.load(pickle_file)))
+            return
+
+        self.movies, self.new_df, self.movies2 = preprocess.read_csv_to_df()
+
+        for path, attr in PICKLE_FILES.items():
+            with open(path, 'wb') as pickle_file:
+                pickle.dump(getattr(self, attr).to_dict(), pickle_file)
+
+    def vectorise(self, col_name: str):
+        cv = CountVectorizer(max_features=5000, stop_words='english')
+        vec_tags = cv.fit_transform(self.new_df[col_name])
+        return cosine_similarity(vec_tags, dense_output=False)
+
     def get_similarity(self, col_name: str) -> None:
         path = f'Files/similarity_tags_{col_name}.pkl'
         if os.path.exists(path):

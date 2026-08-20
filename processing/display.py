@@ -4,17 +4,6 @@ import os
 import pickle
 from typing import List, Optional, Tuple
 
-import pandas as pd
-from 
-}
-
-
-class Main:
-
-    def __init__(self) -> None:
-        self.new_df: Optional[pd.DataFrame] = None
-        self.movies: Optional[pd.DataFrame] = None
-        self.movies2: Optional[pd.DataFrame] = None
 
     def getter(self) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         return self.new_df, self.movies, self.movies2

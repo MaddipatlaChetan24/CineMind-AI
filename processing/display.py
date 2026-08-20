@@ -5,18 +5,7 @@ import pickle
 from typing import List, Optional, Tuple
 
 import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-
-from processing import preprocess
-from processing.embeddings import compute_tfidf_similarity
-
-SIMILARITY_COLUMNS = ('tags', 'genres', 'keywords', 'cast', 'production_comp')
-
-PICKLE_FILES = {
-    'Files/new_df_dict.pkl': 'new_df',
-    'Files/movies_dict.pkl': 'movies',
-    'Files/movies2_dict.pkl': 'movies2',
+from 
 }
 
 

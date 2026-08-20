@@ -5,9 +5,7 @@ import pickle
 from typing import List, Optional, Tuple
 
 
-    def getter(self) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-        return self.new_df, self.movies, self.movies2
-
+   
     def get_df(self) -> None:
         if os.path.exists('Files/new_df_dict.pkl'):
             for path, attr in PICKLE_FILES.items():

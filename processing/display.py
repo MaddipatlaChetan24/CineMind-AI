@@ -5,13 +5,6 @@ import pickle
 from typing import List, Optional, Tuple
 
 
-   
-    def get_df(self) -> None:
-        if os.path.exists('Files/new_df_dict.pkl'):
-            for path, attr in PICKLE_FILES.items():
-                with open(path, 'rb') as pickle_file:
-                    setattr(self, attr, pd.DataFrame.from_dict(pickle.load(pickle_file)))
-            return
 
         self.movies, self.new_df, self.movies2 = preprocess.read_csv_to_df()
 

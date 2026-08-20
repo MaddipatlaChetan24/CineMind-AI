@@ -4,14 +4,6 @@ import os
 import pickle
 from typing import List, Optional, Tuple
 
-
-
-
-    def vectorise(self, col_name: str):
-        cv = CountVectorizer(max_features=5000, stop_words='english')
-        vec_tags = cv.fit_transform(self.new_df[col_name])
-        return cosine_similarity(vec_tags, dense_output=False)
-
     def get_similarity(self, col_name: str) -> None:
         path = f'Files/similarity_tags_{col_name}.pkl'
         if os.path.exists(path):

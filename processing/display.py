@@ -6,11 +6,6 @@ from typing import List, Optional, Tuple
 
 
 
-        self.movies, self.new_df, self.movies2 = preprocess.read_csv_to_df()
-
-        for path, attr in PICKLE_FILES.items():
-            with open(path, 'wb') as pickle_file:
-                pickle.dump(getattr(self, attr).to_dict(), pickle_file)
 
     def vectorise(self, col_name: str):
         cv = CountVectorizer(max_features=5000, stop_words='english')

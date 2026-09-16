@@ -15,13 +15,6 @@
 ---
 
 # Overview
-
-**CineMind AI** is an end-to-end **NLP and machine learning** application that delivers personalized movie recommendations using content-based filtering, Bag-of-Words, TF-IDF similarity, hybrid ranking, and user preference filtering.
-
-The system processes the TMDB 5000 dataset, extracts movie metadata such as genres, keywords, cast, crew, and overview, and generates multiple similarity signals. These signals are combined through a hybrid recommendation engine and refined using user preferences such as favorite genres, preferred decade, and minimum rating.
-
----
-
 # Features
 
 | Feature | Description |

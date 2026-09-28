@@ -6,12 +6,7 @@ import streamlit_option_menu
 from streamlit_extras.stoggle import stoggle
 
 from processing import preprocess, ui
-from processing.display import Main
-    st.header("Cast")
-    cols = st.columns(5)
-
-    with col3:
-        if st.button("Next", use_container_width=True, disabled=page >= num_pages - 1):
+from processing.display import Main= num_pages - 1):
             st.session_state.page = page + 1
     with col2:
         st.caption(f"Page {page + 1} of {num_pages} · {len(filtered):,} movies")

@@ -26,10 +26,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
 
     """Map movie_id -> (rating, year) for display on movie cards."""
     meta = {}
-def compute_recommendations(
-    new_df: pd.DataFrame, movie: str
-) -> Dict[str, List[Tuple[str, int]]]:
-    return {
     }
 
 

@@ -23,10 +23,7 @@ from processing.display import Main
     else:
         filtered = movies
 
-    num_pages = max((len(filtered) + PAGE_SIZE - 1) // PAGE_SIZE, 1)
-    page = min(st.session_state.get("page", 0), num_pages - 1)
-
-    col1, col2, col3 = st.columns([1, 9, 1])
+    num_pages = max(= st.columns([1, 9, 1])
     with col1:
         if st.button("Prev", use_container_width=True, disabled=page == 0):
             st.session_state.page = page - 1

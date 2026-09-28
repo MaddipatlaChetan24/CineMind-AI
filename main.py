@@ -13,9 +13,6 @@ from processing.display import Main= num_pages - 1):
 
 
 def personalized_page(
-    new_df: pd.DataFrame,
-    movies2: pd.DataFrame,
-    meta: Dict[int, Tuple[float, str]],
 ) -> None:
     """Personalized For You — hybrid recommendations filtered by user preferences."""
     st.title("Personalized For You")

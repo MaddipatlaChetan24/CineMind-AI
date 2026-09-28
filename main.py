@@ -11,15 +11,6 @@ from processing.display import Main= num_pages - 1):
     with col2:
         st.caption(f"Page {page + 1} of {num_pages} · {len(filtered):,} movies")
 
-    page_rows = filtered.iloc[page * PAGE_SIZE:(page + 1) * PAGE_SIZE]
-    for row_start in range(0, len(page_rows), 5):
-        cols = st.columns(5)
-        for col, (_, row) in zip(cols, page_rows.iloc[row_start:row_start + 5].iterrows()):
-            with col:
-                rating, year = meta.get(row["movie_id"], (0, ''))
-                st.image(preprocess.fetch_posters(row["movie_id"]), width="stretch")
-                st.caption(format_caption(row["title"], rating, year))
-
 
 def personalized_page(
     new_df: pd.DataFrame,

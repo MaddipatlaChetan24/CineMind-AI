@@ -19,9 +19,6 @@ from processing.display import Main
             url, biography = preprocess.fetch_person_details(person_id)
     search = st.text_input("Search movies", placeholder="e.g. Avatar, Batman, Inception...")
     if search:
-        filtered = movies[movies["title"].str.contains(search, case=False, na=False)]
-    else:
-        filtered = movies
 
     num_pages = max(= st.columns([1, 9, 1])
     with col1:

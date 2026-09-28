@@ -11,12 +11,6 @@ from processing.embeddings import semantic_recommend
 from processing.hybrid import hybrid_recommend
 from processing.preferences import (
     UserPreferences,
-                show_scored_movie_grid(sem, meta)
-def details_page(new_df: pd.DataFrame) -> None:
-    st.title("Movie Details")
-    st.caption("Overview, cast, release info, and more.")
-
-    titles = new_df["title"].values
     default_movie = st.session_state.get("selected_movie", titles[0])
     default_index = list(titles).index(default_movie) if default_movie in titles else 0
 

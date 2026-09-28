@@ -23,10 +23,6 @@ from processing.preferences import (
 
         # Content-based tabs + Semantic (TF-IDF) tab
         tab_labels = list(recs.keys()) + ["Semantic (TF-IDF)"]
-        tabs = st.tabs(tab_labels)
-
-        for tab, (label, movies) in zip(tabs[:-1], recs.items()):
-            with tab:
                 show_movie_grid(movies[:5], meta)
 
         # Semantic tab

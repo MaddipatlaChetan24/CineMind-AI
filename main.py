@@ -7,11 +7,6 @@ from streamlit_extras.stoggle import stoggle
 
 from processing import preprocess, ui
 from processing.display import Main
-    col1.metric("Rating", f"{info.rating}/10")
-    col2.metric("Votes", f"{info.vote_count:,}")
-    col4.metric("Release", info.release_date)
-    col1, col2, col3 = st.columns(3)
-    with col1:
     st.header("Cast")
     cols = st.columns(5)
 

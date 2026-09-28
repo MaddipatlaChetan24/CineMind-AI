@@ -22,8 +22,6 @@ from processing.display import Main
             stoggle("Show More", biography or "No biography available.")
 
 ) -> None:
-    st.title("All Movies")
-    st.caption("Browse the full collection.")
 
     search = st.text_input("Search movies", placeholder="e.g. Avatar, Batman, Inception...")
     if search:

@@ -27,9 +27,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
 ]
 
 
-@st.cache_resource
-def load_data() -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-
     """Map movie_id -> (rating, year) for display on movie cards."""
     meta = {}
     for row in movies2.itertuples(index=False):

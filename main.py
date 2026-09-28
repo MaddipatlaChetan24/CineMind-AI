@@ -11,9 +11,6 @@ from processing.embeddings import semantic_recommend
 from processing.hybrid import hybrid_recommend
 from processing.preferences import (
     UserPreferences,
-        with tabs[-1]:
-            sem = st.session_state.get("semantic_recs", [])
-            if sem:
                 show_scored_movie_grid(sem, meta)
 def details_page(new_df: pd.DataFrame) -> None:
     st.title("Movie Details")

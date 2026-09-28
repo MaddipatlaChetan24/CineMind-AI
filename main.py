@@ -10,9 +10,6 @@ from processing.display import Main
 from processing.embeddings import semantic_recommend
 from processing.hybrid import hybrid_recommend
 from processing.preferences import (
-    UserPreferences,
-
-    col1, col2, col3, col4 = st.columns(4)
     col1.metric("Rating", f"{info.rating}/10")
     col2.metric("Votes", f"{info.vote_count:,}")
     col3.metric("Runtime", f"{info.runtime} min")

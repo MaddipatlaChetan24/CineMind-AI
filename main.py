@@ -25,10 +25,7 @@ def show_movie_grid(
     movies: List[Tuple[str, int]], meta: Dict[int, Tuple[float, str]]
 ) -> None:
     cols = st.columns(5)
-    for col, (title, movie_id) in zip(cols, movies):
-        rating, year = meta.get(movie_id, (0, ''))
-        with col:
-            st.image(preprocess.fetch_posters(movie_id), width="stretch")
+    for col, (title, movie_id) in zip(cols, movies):idth="stretch")
             st.caption(format_caption(title, rating, year))
 
 

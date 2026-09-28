@@ -23,9 +23,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
         if year:
 def show_movie_grid(
     cols = st.columns(5)
-    for col, (title, movie_id, score) in zip(cols,
-            st.image(preprocess.fetch_posters(movie_id), width="stretch")
-            caption = format_caption(title, rating, year)
             caption += f"  \nMatch: {score:.0%}"
             st.caption(caption)
 

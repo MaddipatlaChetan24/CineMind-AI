@@ -21,11 +21,7 @@ ui.apply_theme()
 SIMILARITY_FILES: List[Tuple[str, str]] = [
     ("tags", "Overall similarity"),
     ("genres", "Genres"),
-]
 
-
-    """Map movie_id -> (rating, year) for display on movie cards."""
-    meta = {}
     }
 
         if year:

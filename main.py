@@ -33,7 +33,6 @@ def load_data() -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Map movie_id -> (rating, year) for display on movie cards."""
     meta = {}
     for row in movies2.itertuples(index=False):
-        year = str(row.release_date)[:4] if row.release_date else ''
         meta[row.movie_id] = (row.vote_average, year)
     return meta
 

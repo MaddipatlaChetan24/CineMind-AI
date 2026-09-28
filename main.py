@@ -7,9 +7,6 @@ from streamlit_extras.stoggle import stoggle
 
 from processing import preprocess, ui
 from processing.display import Main
-from processing.embeddings import semantic_recommend
-from processing.hybrid import hybrid_recommend
-from processing.preferences import (
     col1.metric("Rating", f"{info.rating}/10")
     col2.metric("Votes", f"{info.vote_count:,}")
     col3.metric("Runtime", f"{info.runtime} min")

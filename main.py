@@ -36,8 +36,6 @@ def load_data() -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     return loader.getter()
 
 
-@st.cache_resource
-def movie_meta(movies2: pd.DataFrame) -> Dict[int, Tuple[float, str]]:
     """Map movie_id -> (rating, year) for display on movie cards."""
     meta = {}
     for row in movies2.itertuples(index=False):

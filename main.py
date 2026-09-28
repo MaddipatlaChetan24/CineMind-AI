@@ -9,7 +9,6 @@ from processing import preprocess, ui
 from processing.display import Main
     col1.metric("Rating", f"{info.rating}/10")
     col2.metric("Votes", f"{info.vote_count:,}")
-    col3.metric("Runtime", f"{info.runtime} min")
     col4.metric("Release", info.release_date)
 
     st.write("**Overview**")

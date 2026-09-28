@@ -292,7 +292,6 @@ def main() -> None:
         recommend_page(new_df, meta)
     elif choice == 'Describe me a movie':
         details_page(new_df)
-    elif choice == 'Check all Movies':
         all_movies_page(movies, meta)
     elif choice == 'Personalized For You':
         personalized_page(new_df, movies2, meta)

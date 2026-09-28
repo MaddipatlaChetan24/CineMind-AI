@@ -13,9 +13,6 @@ from processing.preferences import (
     UserPreferences,
     default_movie = st.session_state.get("selected_movie", titles[0])
     default_index = list(titles).index(default_movie) if default_movie in titles else 0
-
-
-    year = info.release_date[:4] if info.release_date else ''
     ui.hero(info.backdrop, selected_movie, subtitle=f"{year} · {', '.join(info.genres)}")
 
     col1, col2, col3, col4 = st.columns(4)

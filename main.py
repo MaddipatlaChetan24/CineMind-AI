@@ -14,9 +14,6 @@ from processing.preferences import (
     filter_by_preferences,
     preference_controls,
     st.caption("Pick a movie and get similar suggestions based on tags, genres, keywords, cast, and production company.")
-
-    selected_movie = st.selectbox("Select a movie...", new_df["title"].values)
-
     if st.button("Recommend", type="primary", use_container_width=True):
             st.session_state.semantic_recs = semantic_recommend(new_df, selected_movie, top_n
         st.subheader(f"Recommendations for **{st.session_state.selected_movie}**")

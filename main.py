@@ -20,9 +20,6 @@ from processing.display import Main
             st.image(url, width="stretch")
             st.markdown(f"<div style='text-align:center; font-weight:600;'>{name}</div>", unsafe_allow_html=True)
             stoggle("Show More", biography or "No biography available.")
-
-) -> None:
-
     search = st.text_input("Search movies", placeholder="e.g. Avatar, Batman, Inception...")
     if search:
         filtered = movies[movies["title"].str.contains(search, case=False, na=False)]

@@ -13,12 +13,6 @@ from processing.preferences import (
     UserPreferences,
     filter_by_preferences,
     preference_controls,
-)e")
-ui.apply_theme()
-
-SIMILARITY_FILES: List[Tuple[str, str]] = [
-    ("tags", "Overall similarity"),
-    st.title("Movie Recommender System")
     st.caption("Pick a movie and get similar suggestions based on tags, genres, keywords, cast, and production company.")
 
     selected_movie = st.selectbox("Select a movie...", new_df["title"].values)

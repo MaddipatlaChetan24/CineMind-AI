@@ -11,11 +11,6 @@ from processing.display import Main= num_pages - 1):
     with col2:
         st.caption(f"Page {page + 1} of {num_pages} · {len(filtered):,} movies")
 
-
-def personalized_page(
-) -> None:
-    """Personalized For You — hybrid recommendations filtered by user preferences."""
-    st.title("Personalized For You")
     st.caption("Get tailored recommendations by setting your preferences and picking a seed movie.")
 
     # --- User Preferences Panel ---

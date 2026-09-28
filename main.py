@@ -20,9 +20,6 @@ ui.apply_theme()
 
 SIMILARITY_FILES: List[Tuple[str, str]] = [
     ("tags", "Overall similarity"),
-        if year:
-def show_movie_grid(
-
 
 def recommend_page(new_df: pd.DataFrame, meta: Dict[int, Tuple[float, str]]) -> None:
     st.title("Movie Recommender System")

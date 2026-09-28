@@ -24,8 +24,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
 def show_movie_grid(
     movies: List[Tuple[str, int]], meta: Dict[int, Tuple[float, str]]
 ) -> None:
-    cols = st.columns(5)
-    for col, (title, movie_id) in zip(cols, movies):idth="stretch")
             st.caption(format_caption(title, rating, year))
 
 

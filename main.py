@@ -22,9 +22,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
     ("tags", "Overall similarity"),
         if year:
 def show_movie_grid(
-    cols = st.columns(5)
-            caption += f"  \nMatch: {score:.0%}"
-            st.caption(caption)
 
 
 def recommend_page(new_df: pd.DataFrame, meta: Dict[int, Tuple[float, str]]) -> None:

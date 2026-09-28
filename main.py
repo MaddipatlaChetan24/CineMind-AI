@@ -33,8 +33,7 @@ def compute_recommendations(
     }
 
 
-def format_caption(title: str, rating: float, year: str) -> str:
-    caption = f"**{title}**"
+
     if year or rating:
         caption += "  \n"
         if year:

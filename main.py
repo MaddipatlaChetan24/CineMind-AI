@@ -11,10 +11,6 @@ from processing.embeddings import semantic_recommend
 from processing.hybrid import hybrid_recommend
 from processing.preferences import (
     UserPreferences,
-    if st.button("Recommend", type="primary", use_container_width=True):
-                show_movie_grid(movies[:5], meta)
-
-        # Semantic tab
         with tabs[-1]:
             sem = st.session_state.get("semantic_recs", [])
             if sem:

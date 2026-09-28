@@ -14,10 +14,6 @@ from processing.display import Main
     with col1:
         st.write("**Budget**")
         st.markdown(f"<span style='font-size:1.15rem;'>${info.budget:,}</span>", unsafe_allow_html=True)
-    with col2:
-        st.write("**Revenue**")
-        st.markdown(f"<span style='font-size:1.15rem;'>${info.revenue:,}</span>", unsafe_allow_html=True)
-    with col3:
         st.write("**Directed by**")
         st.markdown(f"<span style='font-size:1.15rem;'>{info.director[0] if info.director else '—'}</span>",
                     unsafe_allow_html=True)

@@ -12,11 +12,6 @@ from processing.hybrid import hybrid_recommend
 from processing.preferences import (
     UserPreferences,
     if st.button("Recommend", type="primary", use_container_width=True):
-            st.session_state.semantic_recs = semantic_recommend(new_df, selected_movie, top_n
-        st.subheader(f"Recommendations for **{st.session_state.selected_movie}**")
-
-        # Content-based tabs + Semantic (TF-IDF) tab
-        tab_labels = list(recs.keys()) + ["Semantic (TF-IDF)"]
                 show_movie_grid(movies[:5], meta)
 
         # Semantic tab

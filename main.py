@@ -26,8 +26,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
     ("production_comp", "Production company"),
 ]
 
-PAGE_SIZE = 10
-
 
 @st.cache_resource
 def load_data() -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:

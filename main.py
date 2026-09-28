@@ -17,9 +17,6 @@ from processing.display import Main
     for col, (name, person_id) in zip(cols, zip(info.cast[:5], info.cast_ids[:5])):
         with col:
             url, biography = preprocess.fetch_person_details(person_id)
-            st.image(url, width="stretch")
-            st.markdown(f"<div style='text-align:center; font-weight:600;'>{name}</div>", unsafe_allow_html=True)
-            stoggle("Show More", biography or "No biography available.")
     search = st.text_input("Search movies", placeholder="e.g. Avatar, Batman, Inception...")
     if search:
         filtered = movies[movies["title"].str.contains(search, case=False, na=False)]

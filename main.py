@@ -21,9 +21,6 @@ ui.apply_theme()
 SIMILARITY_FILES: List[Tuple[str, str]] = [
     ("tags", "Overall similarity"),
     ("genres", "Genres"),
-    ("keywords", "Keywords"),
-    ("cast", "Cast"),
-    ("production_comp", "Production company"),
 ]
 
 

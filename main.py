@@ -10,10 +10,6 @@ from processing.display import Main
     col1.metric("Rating", f"{info.rating}/10")
     col2.metric("Votes", f"{info.vote_count:,}")
     col4.metric("Release", info.release_date)
-
-    st.write("**Overview**")
-    st.write(info.overview)
-
     col1, col2, col3 = st.columns(3)
     with col1:
         st.write("**Budget**")

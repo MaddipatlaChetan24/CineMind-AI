@@ -22,10 +22,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
     ("tags", "Overall similarity"),
         if year:
 def show_movie_grid(
-def show_scored_movie_grid(
-    movies: List[Tuple[str, int, float]], meta: Dict[int, Tuple[float, str]]
-) -> None:
-    """Display a grid of movies that include a similarity score."""
     cols = st.columns(5)
     for col, (title, movie_id, score) in zip(cols, movies[:5]):
         rating, year = meta.get(movie_id, (0, ''))

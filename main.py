@@ -15,10 +15,6 @@ from processing.preferences import (
             sem = st.session_state.get("semantic_recs", [])
             if sem:
                 show_scored_movie_grid(sem, meta)
-            else:
-                st.info("Click **Recommend** to generate semantic results.")
-
-
 def details_page(new_df: pd.DataFrame) -> None:
     st.title("Movie Details")
     st.caption("Overview, cast, release info, and more.")

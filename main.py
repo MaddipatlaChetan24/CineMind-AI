@@ -18,9 +18,6 @@ from processing.preferences import (
     selected_movie = st.selectbox("Select a movie...", new_df["title"].values)
 
     if st.button("Recommend", type="primary", use_container_width=True):
-        st.session_state.selected_movie = selected_movie
-        with st.spinner("Finding similar movies..."):
-            st.session_state.recs = compute_recommendations(new_df, selected_movie)
             st.session_state.semantic_recs = semantic_recommend(new_df, selected_movie, top_n=25)
 
     if recs := st.session_state.get("recs"):

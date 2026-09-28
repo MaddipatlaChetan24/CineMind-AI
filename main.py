@@ -22,11 +22,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
     ("tags", "Overall similarity"),
         if year:
 def show_movie_grid(
-    movies: List[Tuple[str, int]], meta: Dict[int, Tuple[float, str]]
-) -> None:
-            st.caption(format_caption(title, rating, year))
-
-
 def show_scored_movie_grid(
     movies: List[Tuple[str, int, float]], meta: Dict[int, Tuple[float, str]]
 ) -> None:

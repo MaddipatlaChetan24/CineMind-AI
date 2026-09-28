@@ -13,9 +13,6 @@ from processing.display import Main
     col1, col2, col3 = st.columns(3)
     with col1:
         st.write("**Budget**")
-
-    st.write("**Genres**")
-    ui.chips(info.genres)
     st.write("**Available in**")
     ui.chips(info.languages)
 

@@ -11,9 +11,6 @@ from processing.embeddings import semantic_recommend
 from processing.hybrid import hybrid_recommend
 from processing.preferences import (
     UserPreferences,
-    filter_by_preferences,
-    preference_controls,
-    st.caption("Pick a movie and get similar suggestions based on tags, genres, keywords, cast, and production company.")
     if st.button("Recommend", type="primary", use_container_width=True):
             st.session_state.semantic_recs = semantic_recommend(new_df, selected_movie, top_n
         st.subheader(f"Recommendations for **{st.session_state.selected_movie}**")

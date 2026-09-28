@@ -15,10 +15,6 @@ from processing.display import Main
     st.header("Cast")
     cols = st.columns(5)
 
-    num_pages = max(= st.columns([1, 9, 1])
-    with col1:
-        if st.button("Prev", use_container_width=True, disabled=page == 0):
-            st.session_state.page = page - 1
     with col3:
         if st.button("Next", use_container_width=True, disabled=page >= num_pages - 1):
             st.session_state.page = page + 1

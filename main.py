@@ -12,10 +12,6 @@ from processing.display import Main
     col4.metric("Release", info.release_date)
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.write("**Budget**")
-    st.write("**Available in**")
-    ui.chips(info.languages)
-
     st.header("Cast")
     cols = st.columns(5)
     for col, (name, person_id) in zip(cols, zip(info.cast[:5], info.cast_ids[:5])):

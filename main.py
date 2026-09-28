@@ -13,9 +13,7 @@ from processing.preferences import (
     UserPreferences,
     filter_by_preferences,
     preference_controls,
-)
-
-st.set_page_config(page_title="Movie Recommender System", layout="wide")
+)e")
 ui.apply_theme()
 
 SIMILARITY_FILES: List[Tuple[str, str]] = [

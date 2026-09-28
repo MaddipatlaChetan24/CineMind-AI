@@ -20,10 +20,6 @@ ui.apply_theme()
 
 SIMILARITY_FILES: List[Tuple[str, str]] = [
     ("tags", "Overall similarity"),
-    ("genres", "Genres"),
-
-    }
-
         if year:
 def show_movie_grid(
     movies: List[Tuple[str, int]], meta: Dict[int, Tuple[float, str]]

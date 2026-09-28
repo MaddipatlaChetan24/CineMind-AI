@@ -30,8 +30,6 @@ def compute_recommendations(
     new_df: pd.DataFrame, movie: str
 ) -> Dict[str, List[Tuple[str, int]]]:
     return {
-        label: preprocess.recommend(new_df, movie, f"Files/similarity_tags_{col}.pkl")
-        for col, label in SIMILARITY_FILES
     }
 
 

@@ -14,8 +14,6 @@ from processing.preferences import (
     default_movie = st.session_state.get("selected_movie", titles[0])
     default_index = list(titles).index(default_movie) if default_movie in titles else 0
 
-    selected_movie = st.selectbox("Choose a movie...", titles, index=default_index)
-    info = preprocess.get_details(selected_movie)
 
     year = info.release_date[:4] if info.release_date else ''
     ui.hero(info.backdrop, selected_movie, subtitle=f"{year} · {', '.join(info.genres)}")

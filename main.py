@@ -27,10 +27,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
         if year:
             caption += f"{year}"
         if year and rating:
-            caption += " · "
-        if rating:
-            caption += f"Rating: {rating:.1f}"
-    return caption
 
 
 def show_movie_grid(

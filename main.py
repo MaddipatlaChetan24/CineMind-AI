@@ -13,10 +13,6 @@ from processing.display import Main
     col1, col2, col3 = st.columns(3)
     with col1:
         st.write("**Budget**")
-        st.markdown(f"<span style='font-size:1.15rem;'>${info.budget:,}</span>", unsafe_allow_html=True)
-        st.write("**Directed by**")
-        st.markdown(f"<span style='font-size:1.15rem;'>{info.director[0] if info.director else '—'}</span>",
-                    unsafe_allow_html=True)
 
     st.write("**Genres**")
     ui.chips(info.genres)

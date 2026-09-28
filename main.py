@@ -27,9 +27,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
     """Map movie_id -> (rating, year) for display on movie cards."""
     meta = {}
     for row in movies2.itertuples(index=False):
-        meta[row.movie_id] = (row.vote_average, year)
-    return meta
-
 
 def compute_recommendations(
     new_df: pd.DataFrame, movie: str

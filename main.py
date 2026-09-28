@@ -21,9 +21,6 @@ from processing.display import Main
             st.markdown(f"<div style='text-align:center; font-weight:600;'>{name}</div>", unsafe_allow_html=True)
             stoggle("Show More", biography or "No biography available.")
 
-
-def all_movies_page(
-    movies: pd.DataFrame, meta: Dict[int, Tuple[float, str]]
 ) -> None:
     st.title("All Movies")
     st.caption("Browse the full collection.")

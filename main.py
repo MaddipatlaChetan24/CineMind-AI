@@ -28,10 +28,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
     meta = {}
     }
 
-
-
-    if year or rating:
-        caption += "  \n"
         if year:
             caption += f"{year}"
         if year and rating:

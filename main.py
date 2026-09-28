@@ -25,10 +25,6 @@ SIMILARITY_FILES: List[Tuple[str, str]] = [
     }
 
         if year:
-            caption += f"{year}"
-        if year and rating:
-
-
 def show_movie_grid(
     movies: List[Tuple[str, int]], meta: Dict[int, Tuple[float, str]]
 ) -> None:

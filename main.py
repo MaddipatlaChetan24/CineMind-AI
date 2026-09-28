@@ -14,11 +14,6 @@ from processing.display import Main
     with col1:
     st.header("Cast")
     cols = st.columns(5)
-    for col, (name, person_id) in zip(cols, zip(info.cast[:5], info.cast_ids[:5])):
-        with col:
-            url, biography = preprocess.fetch_person_details(person_id)
-    search = st.text_input("Search movies", placeholder="e.g. Avatar, Batman, Inception...")
-    if search:
 
     num_pages = max(= st.columns([1, 9, 1])
     with col1:
